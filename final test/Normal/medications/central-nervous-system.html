@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central Nervous System Medications</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+
+<body>
+  <header>
+    <div class="pharmacy-name">
+      <h1><a href="index.html">Pharmacy Name</a></h1>
+    </div>
+    <div class="country-dropdown">
+      <select id="country-select" onchange="handleCountryChange()">
+        <option value="home">Select Country</option>
+        <option value="UAE">UAE</option>
+        <option value="Canada">Canada</option>
+        <option value="Jordan">Jordan</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero">
+        <h1>Central Nervous System Medications</h1>
+        <p>Explore our range of central nervous system medications.</p>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <div class="container">
+        <h2>Central Nervous System Medications</h2>
+        <div class="medicine-grid">
+          <div class="medicine" data-aos="fade-right">
+            <h3>Medication 1</h3>
+            <p>Description of medication 1.</p>
+          </div>
+          <div class="medicine" data-aos="fade-right">
+            <h3>Medication 2</h3>
+            <p>Description of medication 2.</p>
+          </div>
+          <div class="medicine" data-aos="fade-right">
+            <h3>Medication 3</h3>
+            <p>Description of medication 3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Pharmacy Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    function handleCountryChange() {
+      var countrySelect = document.getElementById("country-select");
+      var selectedCountry = countrySelect.value;
+
+      if (selectedCountry === "UAE") {
+        window.location.href = "/UAE/UAE.HTML";
+      } else if (selectedCountry === "Canada") {
+        window.location.href = "canada/index-canada.html";
+      } else if (selectedCountry === "Jordan") {
+        window.location.href = "jordan/index-jordan.html";
+      }
+    }
+  </script>
+</body>
+
+</html>

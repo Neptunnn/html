@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharmacy Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+
+<body>
+  <header>
+    <div class="pharmacy-name">
+      <h1><a href="index.html">Pharmacy Name</a></h1>
+    </div>
+    <div class="country-dropdown">
+      <select id="country-select" onchange="handleCountryChange()">
+        <option value="home">Select Country</option>
+        <option value="UAE">UAE</option>
+        <option value="Canada">Canada</option>
+        <option value="Jordan">Jordan</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <section id="home-section" class="hero-section fade-in">
+      <div class="hero">
+        <h1>Welcome to Our Pharmacy</h1>
+        <p>Discover a wide range of medications for your needs.</p>
+      </div>
+    </section>
+
+    <section id="products-section" class="products-section fade-in">
+      <div class="container">
+        <div class="medication-info">
+          <p>The type of medication we provide for each medical problem</p>
+        </div>
+        <div class="medicine-grid">
+          <a class="medicine" href="/Normal/medications/cardiovascular.html" data-aos="fade-right">
+            <h2>Cardiovascular And Anti-Diabetics</h2>
+          </a>
+          <a class="medicine" href="/Normal/medications/central-nervous-system.html" data-aos="fade-right">
+            <h2>Central Nervous System</h2>
+          </a>
+          <a class="medicine" href="gastrointestinal.html" data-aos="fade-right">
+            <h2>Gastrointestinal</h2>
+          </a>
+          <a class="medicine" href="genitourinary-anti-infectives.html" data-aos="fade-right">
+            <h2>Genitourinary Anti-Infectives</h2>
+          </a>
+          <!-- Add more medicine boxes here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="image-section" class="image-section fade-in">
+      <div class="container">
+        <div class="image-container" data-aos="fade-left">
+          <img src="./images/image1.jpg" alt="Pharmacy Image 1">
+          <div class="pharmacy-info">
+            <h3>About Us</h3>
+            <p>Pharmacy description goes here.</p>
+          </div>
+        </div>
+        <div class="image-container" data-aos="fade-left">
+          <img src="./images/" alt="Pharmacy Image 2">
+          <div class="pharmacy-info">
+            <h3>Services</h3>
+            <p>Services provided by the pharmacy go here.</p>
+          </div>
+        </div>
+        <div class="image-container" data-aos="fade-left">
+          <img src="image3.jpg" alt="Pharmacy Image 3">
+          <div class="pharmacy-info">
+            <h3>Contact Us</h3>
+            <p>Contact information for the pharmacy goes here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="contact-info">
+          <h3>Contact Us</h3>
+          <p>123 Pharmacy Street, City, Country</p>
+          <p>Phone: +1 123 456 7890</p>
+          <p>Email: info@example.com</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="social-media">
+          <h3>Follow Us</h3>
+          <ul>
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+        <div class="map-location">
+          <h3>Location</h3>
+          <div id="map"></div>
+        </div>
+        <div class="about-pharmacy">
+          <h3>About Pharmacy</h3>
+          <p>Description about the pharmacy goes here.</p>
+        </div>
+      </div>
+      <div class="footer-text">
+        <p>&copy; 2023 Pharmacy Name. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    function handleCountryChange() {
+      var countrySelect = document.getElementById("country-select");
+      var selectedCountry = countrySelect.value;
+
+      if (selectedCountry === "UAE") {
+        window.location.href = "UAE/UAE.html";
+      } else if (selectedCountry === "Canada") {
+        window.location.href = "canada/index.html";
+      } else if (selectedCountry === "Jordan") {
+        window.location.href = "jordan/index.html";
+      }
+    }
+
+    function redirectToMedication(url) {
+      window.location.href = url;
+    }
+
+    function isElementInViewport(element) {
+      var rect = element.getBoundingClientRect();
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      return (
+        rect.top <= windowHeight && rect.bottom >= 0
+      );
+    }
+
+    function handleScroll() {
+      var elements = document.getElementsByClassName("fade-in");
+
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+
+        if (isElementInViewport(element)) {
+          element.classList.add("fade-in-active");
+        } else {
+          element.classList.remove("fade-in-active");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    handleScroll();
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const medicines = document.querySelectorAll('.medicine');
+
+      medicines.forEach(function (medicine) {
+        medicine.addEventListener('click', function () {
+          const url = medicine.dataset.url;
+          redirectToMedication(url);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  .pharmacy-name {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .country-dropdown {
+    text-align: right;
+  }
+  
+  /* Main Styles */
+  main {
+    padding: 20px;
+  }
+  
+  /* Hero Section Styles */
+  .hero-section {
+    text-align: center;
+    padding: 100px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  
+  /* Products Section Styles */
+  .products-section {
+    margin-top: 60px;
+  }
+  
+  .medicine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .medicine {
+    background-color: #f2f2f2;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .medicine:hover {
+    background-color: #d9d9d9;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image Section Styles */
+  .image-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+  }
+  
+  .image-container {
+    width: 30%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .image-container:hover {
+    background-color: #d9d9d9;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .pharmacy-info {
+    margin-top: 20px;
+  }
+  
+  .pharmacy-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .pharmacy-info p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .contact-info,
+  .footer-links,
+  .social-media,
+  .map-location,
+  .about-pharmacy {
+    flex: 1;
+  }
+  
+  .contact-info h3,
+  .footer-links h3,
+  .social-media h3,
+  .map-location h3,
+  .about-pharmacy h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .contact-info p,
+  .footer-links ul,
+  .social-media ul,
+  .about-pharmacy p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-links a {
+    color: #fff;
+  }
+  
+  .social-media ul {
+    display: flex;
+  }
+  
+  .social-media li {
+    margin-right: 10px;
+  }
+  
+  .social-media a {
+    color: #fff;
+  }
+  
+  .social-media i {
+    vertical-align: middle;
+  }
+  
+  .footer-links a:hover,
+  .social-media a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-links ul,
+  .social-media ul {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .social-media ul {
+    align-items: flex-end;
+  }
+  
+  .footer-links ul li,
+  .social-media ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul li:last-child,
+  .social-media ul li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .footer-links ul li a,
+  .social-media ul li a {
+    font-size: 14px;
+  }
+  
+  .footer-links ul li a:hover,
+  .social-media ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-text {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Animation Styles */
+  .fade-in {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  .fade-in-active {
+    opacity: 1;
+  }
+  
+  /* Additional Customizations */
+  
+  /* Neon Colors */
+  .pharmacy-name {
+    color: #ff00ff;
+  }
+  
+  .medicine-grid {
+    border-top: 2px solid #00ffff;
+  }
+  
+  .medicine {
+    background-color: #0000ff;
+  }
+  
+  .medicine:hover {
+    background-color: #00ff00;
+  }
+  
+  .footer-links a {
+    color: #ff00ff;
+  }
+  
+  .social-media a {
+    color: #00ffff;
+  }
+  
+  .social-media i {
+    color: #00ff00;
+  }
+  

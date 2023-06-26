@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharmacy Website</title>
+  <link rel="stylesheet" href="UAE-Style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    .pharmacy-name {
+      text-align: left;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .country-dropdown {
+      text-align: right;
+    }
+
+    /* Main Styles */
+    main {
+      padding: 20px;
+    }
+
+    /* Hero Section Styles */
+    .hero-section {
+      text-align: center;
+      padding: 100px 0;
+      background-color: #f9f9f9;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+
+    /* Products Section Styles */
+    .products-section {
+      margin-top: 60px;
+    }
+
+    .medicine-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 20px;
+    }
+
+    .medicine {
+      background-color: #f2f2f2;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    .medicine:hover {
+      background-color: #d9d9d9;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Image Section Styles */
+    .image-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+
+    .image-container {
+      width: 30%;
+      padding: 20px;
+      background-color: #f2f2f2;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .image-container:hover {
+      background-color: #d9d9d9;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .pharmacy-info {
+      margin-top: 20px;
+    }
+
+    .pharmacy-info h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .pharmacy-info p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 40px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .contact-info,
+    .footer-links,
+    .social-media,
+    .map-location,
+    .about-pharmacy {
+      flex: 1;
+    }
+
+    .contact-info h3,
+    .footer-links h3,
+    .social-media h3,
+    .map-location h3,
+    .about-pharmacy h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .contact-info p,
+    .footer-links ul,
+    .social-media ul,
+    .about-pharmacy p {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 5px;
+    }
+
+    .footer-links a {
+      color: #fff;
+    }
+
+    .social-media ul {
+      display: flex;
+    }
+
+    .social-media li {
+      margin-right: 10px;
+    }
+
+    .social-media a {
+      color: #fff;
+    }
+
+    .social-media i {
+      vertical-align: middle;
+    }
+
+    .footer-links a:hover,
+    .social-media a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-links ul,
+    .social-media ul {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .social-media ul {
+      align-items: flex-end;
+    }
+
+    .footer-links ul li,
+    .social-media ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links ul li:last-child,
+    .social-media ul li:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer-links ul li a,
+    .social-media ul li a {
+      font-size: 14px;
+    }
+
+    .footer-links ul li a:hover,
+    .social-media ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-text {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    /* Animation Styles */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    .fade-in-active {
+      opacity: 1;
+    }
+
+    /* Additional Customizations */
+
+    /* Neon Colors */
+    .pharmacy-name {
+      color: #ff00ff;
+    }
+
+    .medicine-grid {
+      border-top: 2px solid #00ffff;
+    }
+
+    .medicine {
+      background-color: #0000ff;
+    }
+
+    .medicine:hover {
+      background-color: #00ff00;
+    }
+
+    .footer-links a {
+      color: #ff00ff;
+    }
+
+    .social-media a {
+      color: #00ffff;
+    }
+
+    .social-media i {
+      color: #00ff00;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="pharmacy-name">
+      <h1><a href="../index.html">Pharmacy Name</a></h1>
+    </div>
+    <div class="country-dropdown">
+      <select id="country-select" onchange="handleCountryChange()">
+        <option value="home">Select Country</option>
+        <option value="UAE">UAE</option>
+        <option value="Canada">Canada</option>
+        <option value="Jordan">Jordan</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <section id="home-section" class="hero-section fade-in">
+      <div class="hero">
+        <h1>Welcome to Our Pharmacy</h1>
+        <p>Discover a wide range of medications for your needs.</p>
+      </div>
+    </section>
+
+    <section id="products-section" class="products-section fade-in">
+      <div class="container">
+        <div class="medication-info">
+          <p>The type of medication we provide for each medical problem</p>
+        </div>
+        <div class="medicine-grid">
+          <a class="medicine" href="medications.uae/cardiovascular-UAE.html" data-aos="fade-right">
+            <h2>Cardiovascular And Anti-Diabetics</h2>
+          </a>
+          <a class="medicine" href="medications.uae/cardiovascular-UAE.html" data-aos="fade-right">
+            <h2>Central Nervous System</h2>
+          </a>
+          <a class="medicine" href="gastrointestinal-UAE.html" data-aos="fade-right">
+            <h2>Gastrointestinal</h2>
+          </a>
+          <a class="medicine" href="/UAE/genitourinary-anti-infectives-UAE.html" data-aos="fade-right">
+            <h2>Genitourinary Anti-Infectives</h2>
+          </a>
+          <!-- Add more medicine boxes here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="image-section" class="image-section fade-in">
+      <div class="container">
+        <div class="image-container" data-aos="fade-left">
+          <img src="./images/image1.jpg" alt="Pharmacy Image 1">
+          <div class="pharmacy-info">
+            <h3>About Us</h3>
+            <p>Pharmacy description goes here.</p>
+          </div>
+        </div>
+        <div class="image-container" data-aos="fade-left">
+          <img src="./images/" alt="Pharmacy Image 2">
+          <div class="pharmacy-info">
+            <h3>Services</h3>
+            <p>Services provided by the pharmacy go here.</p>
+          </div>
+        </div>
+        <div class="image-container" data-aos="fade-left">
+          <img src="image3.jpg" alt="Pharmacy Image 3">
+          <div class="pharmacy-info">
+            <h3>Contact Us</h3>
+            <p>Contact information for the pharmacy goes here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="contact-info">
+          <h3>Contact Us</h3>
+          <p>123 Pharmacy Street, City, Country</p>
+          <p>Phone: +1 123 456 7890</p>
+          <p>Email: info@example.com</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="social-media">
+          <h3>Follow Us</h3>
+          <ul>
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+        <div class="map-location">
+          <h3>Location</h3>
+          <div id="map"></div>
+        </div>
+        <div class="about-pharmacy">
+          <h3>About Pharmacy</h3>
+          <p>Description about the pharmacy goes here.</p>
+        </div>
+      </div>
+      <div class="footer-text">
+        <p>&copy; 2023 Pharmacy Name. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="UAE-Script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    function handleCountryChange() {
+      var countrySelect = document.getElementById("country-select");
+      var selectedCountry = countrySelect.value;
+
+      if (selectedCountry === "UAE") {
+        window.location.href = "../UAE.html";
+      } else if (selectedCountry === "Canada") {
+        window.location.href = "canada/index.html";
+      } else if (selectedCountry === "Jordan") {
+        window.location.href = "jordan/index.html";
+      }
+    }
+
+    function redirectToMedication(url) {
+      window.location.href = url;
+    }
+
+    function isElementInViewport(element) {
+      var rect = element.getBoundingClientRect();
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      return (
+        rect.top <= windowHeight && rect.bottom >= 0
+      );
+    }
+
+    function handleScroll() {
+      var elements = document.getElementsByClassName("fade-in");
+
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+
+        if (isElementInViewport(element)) {
+          element.classList.add("fade-in-active");
+        } else {
+          element.classList.remove("fade-in-active");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    handleScroll();
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const medicines = document.querySelectorAll('.medicine');
+
+      medicines.forEach(function (medicine) {
+        medicine.addEventListener('click', function () {
+          const url = medicine.href;
+          redirectToMedication(url);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
